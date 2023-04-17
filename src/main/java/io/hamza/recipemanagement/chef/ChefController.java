@@ -17,12 +17,8 @@ public class ChefController {
     }
 
     @GetMapping
-    public List<Chef> get(){
+    public List<Chef> getAllChefs(){
         return chefService.getChefs();
     }
 
-    @GetMapping("/test")
-    public String tets(){
-        return "Test - ";
-    }
 }
