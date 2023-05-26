@@ -16,14 +16,19 @@ pipeline {
     
     post {
         always {
-            // Define actions that should always be performed
-            // regardless of the pipeline status
+            steps {
+            	echo 'This step sould be executed always...'
+            }
         }
         success {
-            // Define actions to be performed on successful completion of the pipeline
+            steps {
+            	echo 'If you see this line it means that every thing is ok.'
+            }
         }
         failure {
-            // Define actions to be performed if the pipeline fails
+            steps {
+            	echo 'If you see this line it means that something bad happened!'
+            }
         }
         // Add more post conditions as needed
     }
