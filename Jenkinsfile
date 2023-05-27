@@ -20,18 +20,24 @@ pipeline {
     
     post {
         always {
-            steps {
-            	echo 'This step sould be executed always...'
+            script {
+            	steps {
+            	    echo 'This step sould be executed always...'
+            	}
             }
         }
         success {
-            steps {
-            	echo 'If you see this line it means that every thing is ok.'
+            script {
+            	steps {
+            	    echo 'If you see this line it means that every thing is ok.'
+            	}
             }
         }
         failure {
-            steps {
-            	echo 'If you see this line it means that something bad happened!'
+            script {
+            	steps {
+            	    echo 'If you see this line it means that something bad happened!'
+            	}
             }
         }
         // Add more post conditions as needed
