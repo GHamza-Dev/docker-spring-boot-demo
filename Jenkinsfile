@@ -15,4 +15,12 @@ pipeline {
         }
     }
 
+    post{
+        always{
+            echo "Hello from Jenkins build logs"
+            slackSend channel: '#test',
+            message: "*${currentBuild.currentResult}:* Job ${env.JOB_NAME} build ${env.BUILD_NUMBER} by ${env.BUILD_USER}\n More at: ${env.BUILD_URL}"
+        }
+    }
+
 }
